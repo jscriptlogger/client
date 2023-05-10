@@ -1,0 +1,28 @@
+{
+  "name": "@jscriptlogger/client",
+  "version": "0.0.3",
+  "description": "",
+  "main": "./index.js",
+  "files": [
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "prepublishOnly": "npx tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/luxon": "3.x",
+    "eslint": "^8.40.0",
+    "prettier": "^2.8.8",
+    "typescript": "5.x"
+  },
+  "dependencies": {
+    "@jscriptlogger/lib": "^0.0.14",
+    "@jscriptlogger/schema": "^0.0.29",
+    "autobind-decorator": "^2.4.0",
+    "jsbuffer": "0.x",
+    "luxon": "3.x"
+  }
+}
