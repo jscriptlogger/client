@@ -8,7 +8,9 @@
     "*.d.ts"
   ],
   "scripts": {
-    "prepublishOnly": "npx tsc"
+    "build:es": "npx tsc --module ESNext --outDir es",
+    "set-es-paths": "npx package-utilities --set-es-paths --include \"./*.js\" --es-folder es",
+    "prepublishOnly": "npx tsc && yarn run build:es && yarn run set-es-paths"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +25,12 @@
     "@jscriptlogger/schema": "^0.0.29",
     "autobind-decorator": "^2.4.0",
     "jsbuffer": "0.x",
-    "luxon": "3.x"
+    "luxon": "3.x",
+    "package-utilities": "^0.0.6"
+  },
+  "browser": {
+    "./index.js": "./es/index.js",
+    "./LoggerNetwork.js": "./es/LoggerNetwork.js",
+    "./Client.js": "./es/Client.js"
   }
 }
