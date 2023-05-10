@@ -4,8 +4,8 @@
   "description": "",
   "main": "./index.js",
   "files": [
-    "*.js",
-    "*.d.ts"
+    "*.{js,d.ts}",
+    "es/**/*.{js,d.ts}"
   ],
   "scripts": {
     "build:es": "npx tsc --module ESNext --outDir es",
