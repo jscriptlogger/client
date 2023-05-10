@@ -39,13 +39,6 @@ export default class LoggerNetwork extends Logger {
         super.error("no page id available, failed to proceed");
         return;
       }
-      await this.#client.sendMessage(
-        AddPageLine({
-          line: args.map(convert),
-          pageId,
-          lineType,
-        })
-      );
       const result = await this.#client.sendMessage(
         AddPageLine({
           line: args.map((a) => convert(a)),
