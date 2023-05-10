@@ -36,7 +36,7 @@ export default class LoggerNetwork extends Logger {
     this.#pending = this.#pending.then(async () => {
       const pageId = await this.#pageId;
       if (pageId === null) {
-        // console.error("no page id available, failed to proceed");
+        super.error("no page id available, failed to proceed");
         return;
       }
       await this.#client.sendMessage(
@@ -46,18 +46,18 @@ export default class LoggerNetwork extends Logger {
           lineType,
         })
       );
-      // const result = await this.#client.sendMessage(
-      //   AddPageLine({
-      //     line: args.map((a) => convert(a)),
-      //     pageId,
-      //     lineType,
-      //   })
-      // );
-      // if (result._name !== "app.page.addPageLineResult") {
-      //   console.error("failed to store line with error: %o", result);
-      // } else {
-      //   console.log(result);
-      // }
+      const result = await this.#client.sendMessage(
+        AddPageLine({
+          line: args.map((a) => convert(a)),
+          pageId,
+          lineType,
+        })
+      );
+      if (result._name !== "app.page.addPageLineResult") {
+        super.error("failed to store line with error: %o", result);
+      } else {
+        super.log(result);
+      }
     });
   }
 }
