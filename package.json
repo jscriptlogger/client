@@ -21,8 +21,8 @@
     "typescript": "5.x"
   },
   "dependencies": {
-    "@jscriptlogger/lib": "^0.0.14",
-    "@jscriptlogger/schema": "^0.0.29",
+    "@jscriptlogger/lib": "0.x",
+    "@jscriptlogger/schema": "0.x",
     "autobind-decorator": "^2.4.0",
     "jsbuffer": "0.x",
     "luxon": "3.x",
