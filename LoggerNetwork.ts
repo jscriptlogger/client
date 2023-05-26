@@ -1,4 +1,4 @@
-import Logger, { ILoggerOptions } from "@jscriptlogger/lib";
+import Logger, { ILoggerOptions, LogLevel } from "@jscriptlogger/lib";
 import Client from "./Client";
 import {
   AddPageLine,
@@ -18,6 +18,7 @@ export default class LoggerNetwork extends Logger {
     options: ILoggerOptions & {
       pageId: Promise<objectId | null>;
       client: Client;
+      logLevel?: LogLevel;
     }
   ) {
     super(name, options);
